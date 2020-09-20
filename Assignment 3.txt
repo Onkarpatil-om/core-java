@@ -1,0 +1,126 @@
+		Day 3
+		Name:Onkar Patil
+=======================================================================================================
+
+29.	Write a program to print the total number of one-D arrays in a two-D array and the number of elements in every one-D array present in the two-D arrays.
+		=>import java.util.*;
+class expre{
+	  public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter row ");
+		int n=sc.nextInt();
+		int arr[][]=new int[n][];
+		for(int i=0;i<arr.length;i++){
+			System.out.println("Enter col ");
+			int k=sc.nextInt();
+			arr[i]=new int[k];
+			for(int j=0;j<arr[i].length;j++){
+				arr[i][j]=sc.nextInt();
+			
+			}
+		}
+		System.out.println("No of 1D Array in 2D Array= "+arr.length);
+		int i=0;
+		for(int a[]:arr){
+			
+				System.out.println("Element in 1D Array at index "+i);
+			for(int b:a){
+				System.out.print(b+" ");
+			}
+			System.out.println(" ");
+		i++;
+		}
+		
+
+	    }
+	}
+==============================================================================================================
+30.	Create an integer type 2-D array of size [3X3]. Take the elements from the user and then calculate the sum of the elements present in the diagonal.
+		=>import java.util.*;
+class expre{
+	  public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		//System.out.println("Enter row ");
+		//int n=sc.nextInt();
+		int arr[][]=new int[3][3];
+		for(int i=0;i<arr.length;i++){
+			
+			for(int j=0;j<arr[i].length;j++){
+				arr[i][j]=sc.nextInt();
+			
+			}
+		}
+		System.out.println("No of 1D Array in 2D Array= "+arr.length);
+			int a=0,b=0,sum=0;
+			for(int i=0;i<arr.length;i++){
+			
+			for(int j=0;j<arr[i].length;j++){
+				if(arr[i][j]==arr[a][b]){
+					sum=sum+arr[i][j];					
+					}			
+			
+			}
+			a++;
+			b++;
+			
+		}
+		System.out.println("The Sum of diagonal Elements= "+sum);		
+
+	    }
+	}
+============================================================================================================
+31.	Create a class Student with 2 data members rno and name. Create one method setData() that takes roll number and student name as parameter and stores them in data members rno and name. Create one more method showData() to print the data member values. Create another class ( main class) StudentDemo that creates Student class object and calls setData() and showData() methods.
+	=>class Student{
+	private int rollNo;
+	private String name;
+	private String institute;
+	void setData(int rno,String n,String i){
+		rollNo=rno;
+		name=n;
+		institute=i;
+	}
+	void getData(){
+		System.out.print("student name= "+name+" and roll no = "+rollNo+" Institute name is "+institute);;
+	}
+}
+class StudentDemo{
+	public static void main(String args[]){
+		Student s=new Student();
+		s.setData(70,"Onkar Patil","CDAC");
+		s.getData();		
+
+	}
+
+}
+=======================================================================================================
+32.	Modify the above program (no. 30) to count the no of Student objects created. [ In this program static variable is required ].
+	=>class Student{
+	private int rollNo;
+	private String name;
+	private String institute;
+	private static int count;
+	Student(){
+		count++;
+	}
+	void setData(int rno,String n,String i){
+		rollNo=rno;
+		name=n;
+		institute=i;
+	}
+	void getData(){
+		System.out.print("student name= "+name+" and roll no = "+rollNo+" Institute name is "+institute);;
+	}
+}
+class StudentDemo{
+	public static void main(String args[]){
+		Student s=new Student();
+		s.setData(70,"Onkar Patil","CDAC");
+		s.getData();
+		Student s1=new Student();
+		s1.setData(70,"Omi Patil","CDAC");
+		s1.getData();	
+
+	}
+
+}
+================================================================================================
